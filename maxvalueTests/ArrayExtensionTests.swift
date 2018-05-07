@@ -23,8 +23,21 @@ class ArrayExtensionTests: XCTestCase {
     
     func testMaxInt() {
         let testArray = [0, 5, 1, 10, 2, 3, 150, 9000, 1, 5]
+        XCTAssertEqual(try testArray.maxIntIndex(), 7)
+    }
+    
+    func testMaxIntNil() {
+        let testArray = [Int]()
         
-        XCTAssertEqual(testArray.maxIntIndex(), 7)
+        do {
+            try testArray.maxIntIndex()
+        } catch let error as Exception {
+            XCTAssertEqual(error.message, "array is nil")
+        }
+        catch {
+            XCTFail("Wrong error")
+        }
+
     }
    
 }

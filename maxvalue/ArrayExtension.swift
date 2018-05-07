@@ -21,7 +21,6 @@ extension Array where Element == Int {
     ///
     /// - Returns: The arrays's maximum element`s index.
     public func maxIntIndex() throws -> Int?{
-        
         guard self.first != nil else {
             throw Exception(message: "array is nil")
         }

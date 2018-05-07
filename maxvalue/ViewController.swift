@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         
         do {
             try print(array.maxIntIndex() as Any)
-        }   catch let error as Exception {
+        } catch let error as Exception {
             print(error.message)
         }
         catch{ }
